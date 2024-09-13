@@ -1,0 +1,23 @@
+.category-menu {
+  background-color: #f7f7f7;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.category-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.category-menu li {
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+.category-menu li:hover {
+  color: #5bb8b7;
+}

@@ -1,0 +1,151 @@
+/* Estilos principais da página */
+.container {
+  width: 95%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  width: 150px;
+}
+
+.store-title {
+  font-size: 2.5em;
+  color: #333;
+}
+
+/* Estilo do produto em destaque */
+.featured-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  padding-left: 10%;
+  border-bottom: 2px solid #ccc;
+  max-height: 60vh;
+}
+
+.featured-image {
+  width: 20%;
+  max-width: 20vw;
+}
+
+.featured-info {
+  width: 45%;
+}
+
+.featured-info h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.featured-info p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.featured-button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: tomato;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.featured-button:hover {
+  background-color: darkred;
+}
+
+/* Seção dos produtos */
+.products-section {
+  margin-top: 50px;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Grade de produtos responsiva */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 produtos por linha */
+  }
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha */
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr; /* 1 produto por linha */
+  }
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 1.1em;
+  color: green;
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.auth-section button {
+  padding: 10px 15px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.auth-section button:hover {
+  background-color: #e65a50;
+}
+
+.auth-section span {
+  font-size: 1.2em;
+  color: #333;
+}
