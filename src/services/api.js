@@ -39,10 +39,24 @@ export const addToCart = async (cartItem, token) => {
   });
 };
 
+export const updateCartItem = (itemId, quantity, token) => {
+  return api.post(
+    `/cart/update`,
+    { product_id: itemId, quantity }, // Corrigido para usar "product_id"
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+};
+
 export const removeFromCart = (productId, token) => {
-  return api.delete(`/cart/remove/${productId}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  return api.post(
+    `/cart/remove`,
+    { product_id: productId },
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
 };
 
 // Checkout
@@ -63,6 +77,7 @@ export const getOrders = (token) => {
   });
 };
 
+// Categorias
 export const getCategories = async () => {
   try {
     const response = await axios.get(`${API_URL}/products`);
