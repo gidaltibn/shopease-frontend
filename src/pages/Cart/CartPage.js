@@ -6,6 +6,12 @@ import {
   updateCartItem,
   removeFromCart,
 } from "../../services/api"; // Funções da API para manipular o carrinho e produtos
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faShoppingCart,
+  faHistory,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons"; // Importando ícones
 import "./CartPage.css";
 
 const CartPage = () => {
@@ -27,7 +33,6 @@ const CartPage = () => {
 
     try {
       const response = await getCart(token); // Obtém os itens do carrinho do backend
-      console.log(response);
       const cartItemsWithDetails = await Promise.all(
         response.data.items.map(async (item) => {
           const productDetails = await getProductById(item.product_id); // Busca detalhes do produto pelo product_id
@@ -87,7 +92,19 @@ const CartPage = () => {
 
     try {
       await removeFromCart(itemId, token); // Remove o item do carrinho no backend com o token
-      loadCartItems(); // Recarrega os itens do carrinho
+
+      // Atualiza o estado local removendo o item imediatamente após a remoção bem-sucedida
+      const updatedCartItems = cartItems.filter(
+        (item) => item.product_id !== itemId
+      );
+      setCartItems(updatedCartItems);
+
+      // Se o carrinho estiver vazio após a remoção, define o preço total como zero
+      if (updatedCartItems.length === 0) {
+        setTotalPrice(0);
+      } else {
+        calculateTotalPrice(updatedCartItems); // Atualiza o preço total
+      }
     } catch (error) {
       if (
         error.response &&
@@ -151,17 +168,24 @@ const CartPage = () => {
             >
               Finalizar Compra
             </button>
-            <button
-              onClick={() => navigate("/products")}
-              className="continue-shopping-button"
-            >
-              Continuar Comprando
-            </button>
           </div>
         </div>
       ) : (
         <p>Seu carrinho está vazio.</p>
       )}
+
+      {/* Botões para continuar comprando e acessar o histórico */}
+      <div className="cart-actions">
+        <button
+          onClick={() => navigate("/")}
+          className="continue-shopping-button"
+        >
+          <FontAwesomeIcon icon={faArrowLeft} /> Continuar Comprando
+        </button>
+        <button onClick={() => navigate("/orders")} className="history-button">
+          <FontAwesomeIcon icon={faHistory} /> Histórico de Compras
+        </button>
+      </div>
     </div>
   );
 };

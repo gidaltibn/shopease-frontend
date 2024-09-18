@@ -25,7 +25,7 @@ const ProductDetail = () => {
 
         // Exibe o alerta e redireciona para a página de produtos
         alert(`${product.title} adicionado ao carrinho com sucesso!`);
-        navigate("/products"); // Volta para a página de produtos
+        navigate("/"); // Volta para a página de produtos
       } catch (error) {
         // Tratamento de erros 401 e 405
         if (

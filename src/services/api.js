@@ -17,7 +17,7 @@ export const register = (username, email, password) => {
 
 // Produtos
 export const getProducts = () => {
-  return api.get("/products");
+  return api.get("/");
 };
 
 export const getProductById = (productId) => {
@@ -62,7 +62,7 @@ export const removeFromCart = (productId, token) => {
 // Checkout
 export const checkout = (token) => {
   return api.post(
-    "/cart/checkout",
+    "/checkout",
     {},
     {
       headers: { Authorization: `Bearer ${token}` },

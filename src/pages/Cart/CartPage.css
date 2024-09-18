@@ -2,8 +2,6 @@
   width: 90%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
 }
 
 .cart-items {
@@ -15,11 +13,8 @@
 .cart-item {
   display: flex;
   align-items: center;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #ccc;
   padding: 10px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cart-item-image {
@@ -27,7 +22,6 @@
   height: 100px;
   object-fit: cover;
   margin-right: 20px;
-  border-radius: 8px;
 }
 
 .cart-item-details {
@@ -43,63 +37,55 @@
 .quantity-control button {
   padding: 5px 10px;
   margin: 0 5px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.quantity-control button:hover {
-  background-color: #0056b3;
 }
 
 .remove-button {
-  background-color: #ff4d4f;
+  background-color: tomato;
   color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 14px;
 }
 
 .remove-button:hover {
-  background-color: #d9363e;
+  background-color: darkred;
 }
 
 .cart-total {
   text-align: right;
-  margin-top: 20px;
-  font-size: 1.2em;
 }
 
 .checkout-button {
-  background-color: #28a745;
+  background-color: green;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 16px;
-  margin-left: 10px;
+  margin-top: 20px;
+  border-radius: 8px;
 }
 
 .checkout-button:hover {
-  background-color: #218838;
+  background-color: darkgreen;
 }
 
-.continue-shopping-button {
-  background-color: #007bff;
+.cart-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.continue-shopping-button,
+.history-button {
+  background-color: #ff6f61;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 8px;
 }
 
-.continue-shopping-button:hover {
-  background-color: #0056b3;
+.continue-shopping-button:hover,
+.history-button:hover {
+  background-color: #e65a50;
 }

@@ -8,6 +8,7 @@ import {
   faShoppingCart,
   faSignOutAlt,
   faSignInAlt,
+  faHistory, // Importando ícone de histórico de compras
 } from "@fortawesome/free-solid-svg-icons"; // Importando ícones
 import "./ProductsPage.css";
 
@@ -68,9 +69,13 @@ const ProductsPage = () => {
     navigate("/cart");
   };
 
+  const handleOrdersClick = () => {
+    navigate("/orders");
+  };
+
   return (
     <div className="container">
-      {/* Header com nome do usuário, botão de logout e carrinho */}
+      {/* Header com nome do usuário, botão de logout, carrinho e histórico de compras */}
       <div className="header">
         <h1 className="store-title">Shopease</h1>
         <div className="auth-section">
@@ -82,6 +87,9 @@ const ProductsPage = () => {
               </button>
               <button onClick={handleCartClick} className="cart-button">
                 <FontAwesomeIcon icon={faShoppingCart} />
+              </button>
+              <button onClick={handleOrdersClick} className="orders-button">
+                <FontAwesomeIcon icon={faHistory} />
               </button>
             </>
           ) : (

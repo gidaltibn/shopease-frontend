@@ -149,3 +149,10 @@
   font-size: 1.2em;
   color: #333;
 }
+
+/* Específico para os botões */
+.logout-button,
+.cart-button,
+.orders-button {
+  margin-left: 10px;
+}
