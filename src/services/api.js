@@ -17,7 +17,7 @@ export const register = (username, email, password) => {
 
 // Produtos
 export const getProducts = () => {
-  return api.get("/");
+  return api.get("/products");
 };
 
 export const getProductById = (productId) => {

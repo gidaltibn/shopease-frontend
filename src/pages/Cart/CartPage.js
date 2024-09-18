@@ -177,7 +177,7 @@ const CartPage = () => {
       {/* Botões para continuar comprando e acessar o histórico */}
       <div className="cart-actions">
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/products")}
           className="continue-shopping-button"
         >
           <FontAwesomeIcon icon={faArrowLeft} /> Continuar Comprando

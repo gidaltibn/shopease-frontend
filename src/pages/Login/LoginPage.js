@@ -24,7 +24,7 @@ const LoginPage = () => {
         localStorage.setItem("access_token", access_token);
         localStorage.setItem("user", user);
         setError(""); // Limpa qualquer erro anterior
-        navigate("/"); // Redireciona para a página de produtos após o login bem-sucedido
+        navigate("/products"); // Redireciona para a página de produtos após o login bem-sucedido
       }
     } catch (err) {
       setError("Erro ao realizar o login. Verifique suas credenciais.");

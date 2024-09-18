@@ -78,7 +78,7 @@ const OrdersPage = () => {
 
   // Função para ir à página inicial
   const handleGoToHome = () => {
-    navigate("/");
+    navigate("/products");
   };
 
   return (
