@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { addToCart } from "../services/api"; // Função para adicionar ao carrinho
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"; // Ícone de voltar
 import "./ProductDetail.css";
 
 const ProductDetail = () => {
@@ -59,6 +61,11 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail-container">
+      {/* Ícone de voltar no canto esquerdo superior */}
+      <div className="back-button" onClick={() => navigate(-1)}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </div>
+
       <div className="product-image">
         <img src={product.image} alt={product.title} />
       </div>
