@@ -42,7 +42,7 @@ export const addToCart = async (cartItem, token) => {
 export const updateCartItem = (itemId, quantity, token) => {
   return api.post(
     `/cart/update`,
-    { product_id: itemId, quantity }, // Corrigido para usar "product_id"
+    { product_id: itemId, quantity },
     {
       headers: { Authorization: `Bearer ${token}` },
     }
@@ -91,19 +91,6 @@ export const getCategories = async () => {
     return categories;
   } catch (error) {
     console.error("Erro ao buscar categorias:", error);
-    return [];
-  }
-};
-
-export const getProductsByCategory = async (category) => {
-  try {
-    const response = await axios.get(`${API_URL}/products`);
-    const products = response.data;
-
-    // Filtrar os produtos pela categoria selecionada
-    return products.filter((product) => product.category === category);
-  } catch (error) {
-    console.error("Erro ao buscar produtos por categoria:", error);
     return [];
   }
 };

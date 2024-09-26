@@ -1,11 +1,10 @@
 version: "3"
-
 services:
   frontend:
-    build: ./
+    build: .
     ports:
-      - "3000:80" # Porta 3000 no host será mapeada para a porta 80 no container do frontend
-    
-
-volumes:
-  postgres_data:
+      - "3000:80"
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true

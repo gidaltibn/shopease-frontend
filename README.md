@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+Com base na estrutura de pastas que você forneceu, vou ajustar o **README** para refletir corretamente o seu projeto **Shopease-Frontend**. Veja como fica:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Shopease Frontend
 
-In the project directory, you can run:
+**Shopease Frontend** é a interface do usuário para a aplicação **Shopease**, uma loja virtual que permite aos usuários navegar por produtos, adicionar itens ao carrinho e realizar compras. A aplicação foi construída com **React.js** e se comunica com o backend do **Shopease**, que consome a **FakeStore API** para buscar produtos.
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Autenticação de Usuários**: Login e cadastro de novos usuários.
+- **Listagem de Produtos**: Exibe uma lista de produtos, cujos dados são consumidos a partir do backend.
+- **Carrinho de Compras**: Permite adicionar, remover e atualizar a quantidade de produtos no carrinho.
+- **Finalização de Compras**: Permite a finalização de pedidos, que são enviados para o backend.
+- **Histórico de Pedidos**: Exibe o histórico de compras do usuário, permitindo repetir uma compra anterior.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologias Utilizadas
 
-### `npm test`
+- **React.js**: Biblioteca JavaScript para construção da interface de usuário.
+- **Axios**: Biblioteca para realizar requisições HTTP ao backend.
+- **React Router**: Gerenciamento de rotas para navegação entre as páginas da aplicação.
+- **FontAwesome**: Utilizado para ícones na interface.
+- **Docker**: Para conteinerização da aplicação.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pré-requisitos
 
-### `npm run build`
+Antes de começar, certifique-se de que você tem o [Docker](https://www.docker.com/get-started) instalado na sua máquina.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como Rodar o Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Rodando com Docker
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone o repositório**:
 
-### `npm run eject`
+   ```bash
+   git clone https://github.com/seu-usuario/shopease-frontend.git
+   cd shopease-frontend
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Construa a imagem Docker**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   docker build -t shopease-frontend .
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Execute o container**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   docker run -p 3000:80 shopease-frontend
+   ```
 
-## Learn More
+4. **Acesse a aplicação**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   A aplicação estará disponível em `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Rodando Localmente (sem Docker)
 
-### Code Splitting
+1. **Clone o repositório**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   git clone https://github.com/seu-usuario/shopease-frontend.git
+   cd shopease-frontend
+   ```
 
-### Analyzing the Bundle Size
+2. **Instale as dependências**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   npm install
+   ```
 
-### Making a Progressive Web App
+3. **Inicie a aplicação**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   npm start
+   ```
 
-### Advanced Configuration
+4. **Acesse a aplicação**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   A aplicação estará disponível em `http://localhost:3000`.
 
-### Deployment
+## Rotas da Aplicação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **/login** - Página de login para autenticação de usuários.
+- **/signup** - Página de cadastro de novos usuários.
+- **/products** - Página principal que exibe a lista de produtos.
+- **/products/:id** - Página de detalhes do produto, onde o usuário pode visualizar informações detalhadas e adicionar ao carrinho.
+- **/cart** - Página do carrinho de compras, onde os produtos são exibidos e o usuário pode finalizar a compra.
+- **/checkout** - Página de finalização de compra.
+- **/orders** - Página que exibe o histórico de compras do usuário.
 
-### `npm run build` fails to minify
+## Estrutura do Projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+shopease-frontend/
+│
+├── public/                      # Arquivos públicos como favicon e index.html
+├── src/
+│   ├── assets/                  # Arquivos estáticos como imagens e estilos
+│   ├── components/              # Componentes reutilizáveis
+│   │   ├── CategoryMenu/         # Menu de categorias
+│   │   ├── NavBar/               # Barra de navegação
+│   │   └── ProductCard/          # Card de produto
+│   ├── pages/                   # Páginas principais da aplicação
+│   │   ├── Cart/                # Página de carrinho
+│   │   ├── Checkout/            # Página de checkout
+│   │   ├── Login/               # Página de login
+│   │   ├── Orders/              # Página de pedidos
+│   │   ├── ProductDetail/       # Página de detalhes do produto
+│   │   ├── Products/            # Página de listagem de produtos
+│   │   └── SignUp/              # Página de cadastro
+│   ├── services/                # Serviços para comunicação com o backend
+│   ├── App.js                   # Configuração das rotas
+│   ├── index.js                 # Ponto de entrada da aplicação
+│   ├── Dockerfile               # Arquivo para configurar a construção do container Docker
+│   └── docker-compose.yml       # Arquivo Docker Compose para orquestração dos containers
+├── package.json                 # Dependências e scripts do projeto
+└── README.md                    # Documentação do projeto
+```
+
+## Comunicação com o Backend
+
+O frontend do **Shopease** realiza chamadas HTTP para o backend utilizando a biblioteca **Axios**. Aqui estão alguns dos fluxos principais de comunicação:
+
+1. **Autenticação de Usuários**:
+   - O login e o cadastro de usuários são gerenciados através de chamadas ao backend, que gera tokens JWT para autenticação.
+
+2. **Listagem de Produtos**:
+   - Os produtos são obtidos a partir do backend, que consome os dados da **FakeStore API**.
+
+3. **Carrinho de Compras**:
+   - Os produtos adicionados ao carrinho são enviados ao backend, que gerencia o estado do carrinho.
+
+4. **Finalização de Compras**:
+   - A finalização do pedido é tratada no backend, que cria uma nova entrada no histórico de pedidos do usuário.
+
+5. **Histórico de Compras**:
+   - O histórico de compras é solicitado ao backend, que retorna os pedidos do usuário logado.
