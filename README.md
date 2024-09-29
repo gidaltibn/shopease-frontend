@@ -53,31 +53,6 @@ Antes de começar, certifique-se de que você tem o [Docker](https://www.docker.
 
    A aplicação estará disponível em `http://localhost:3000`.
 
-### Rodando Localmente (sem Docker)
-
-1. **Clone o repositório**:
-
-   ```bash
-   git clone https://github.com/seu-usuario/shopease-frontend.git
-   cd shopease-frontend
-   ```
-
-2. **Instale as dependências**:
-
-   ```bash
-   npm install
-   ```
-
-3. **Inicie a aplicação**:
-
-   ```bash
-   npm start
-   ```
-
-4. **Acesse a aplicação**:
-
-   A aplicação estará disponível em `http://localhost:3000`.
-
 ## Rotas da Aplicação
 
 - **/login** - Página de login para autenticação de usuários.
