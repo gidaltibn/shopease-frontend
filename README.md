@@ -48,6 +48,10 @@ Antes de começar, certifique-se de que você tem o [Docker](https://www.docker.
    ```bash
    docker run -p 3000:80 shopease-frontend
    ```
+   ou
+   ```bash
+   docker-compose up
+   ```
 
 4. **Acesse a aplicação**:
 
