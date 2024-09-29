@@ -1,7 +1,3 @@
-Com base na estrutura de pastas que você forneceu, vou ajustar o **README** para refletir corretamente o seu projeto **Shopease-Frontend**. Veja como fica:
-
----
-
 # Shopease Frontend
 
 **Shopease Frontend** é a interface do usuário para a aplicação **Shopease**, uma loja virtual que permite aos usuários navegar por produtos, adicionar itens ao carrinho e realizar compras. A aplicação foi construída com **React.js** e se comunica com o backend do **Shopease**, que consome a **FakeStore API** para buscar produtos.
